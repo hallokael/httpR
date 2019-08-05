@@ -23,6 +23,9 @@ func StatusInternalServerError(resp interface{}, params ...string) HttpRun {
 func StatusBadRequest(resp interface{}, params ...string) HttpRun {
 	return CommonRequest(http.StatusBadRequest, resp, params...)
 }
+func StatusForbidden(resp interface{}, params ...string) HttpRun {
+	return CommonRequest(http.StatusForbidden, resp, params...)
+}
 func CommonRequest(code int, resp interface{}, param ...string) HttpRun {
 	line, fileName := GetCallerMessage()
 	return HttpRun{
